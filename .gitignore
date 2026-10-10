@@ -1,0 +1,15 @@
+.env
+.venv/
+.pytest_cache/
+.yolo_config/
+__pycache__/
+*.py[cod]
+
+database/*.db
+static/uploads/*
+static/outputs/*
+!static/uploads/.gitkeep
+!static/outputs/.gitkeep
+
+*.zip
+flask_server*.log

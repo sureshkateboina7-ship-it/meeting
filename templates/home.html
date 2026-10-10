@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+    <div class="hero-main">
+        <p class="eyebrow">Traffic Enforcement Console</p>
+        <h2>No-Helmet Detection</h2>
+        <p>
+            Detect riders without helmets, isolate the motorcycle, read the number plate, and store challan-ready evidence.
+        </p>
+        <div class="hero-actions">
+            <a class="btn" href="{{ url_for('pages.live') }}">Start Live Detection</a>
+            <a class="btn secondary" href="{{ url_for('pages.dashboard') }}">View Violations</a>
+        </div>
+    </div>
+    <div class="hero-panel">
+        <div class="hero-metrics">
+            <div class="metric">
+                <h3>Inputs</h3>
+                <p>Image, video, and live camera streams</p>
+            </div>
+            <div class="metric">
+                <h3>Evidence</h3>
+                <p>Rider, motorcycle, plate crop, timestamp</p>
+            </div>
+            <div class="metric">
+                <h3>Pipeline</h3>
+                <p>No helmet -> motorcycle plate -> OCR -> database</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <h3>Detection Modules</h3>
+    <div class="grid">
+        <a class="btn" href="{{ url_for('pages.image') }}">Image Detection</a>
+        <a class="btn" href="{{ url_for('pages.video') }}">Video Detection</a>
+        <a class="btn" href="{{ url_for('pages.live') }}">Live Camera Detection</a>
+        <a class="btn secondary" href="{{ url_for('pages.dashboard') }}">Violations Dashboard</a>
+        <a class="btn secondary" href="{{ url_for('pages.email') }}">Email Center</a>
+        <a class="btn secondary" href="{{ url_for('pages.about') }}">Model Details</a>
+    </div>
+</section>
+{% endblock %}

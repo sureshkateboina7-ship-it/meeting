@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-title">
+    <p class="eyebrow">Single Frame Analysis</p>
+    <h2>Image Detection</h2>
+    <p>Upload one traffic image and generate challan evidence for no-helmet motorcycle riders.</p>
+</section>
+
+<section class="tool-layout">
+    <div class="card">
+        <h2>Upload Image</h2>
+        <form id="image-form">
+            <input type="file" name="file" accept="image/*" required />
+            <input type="email" name="email" placeholder="Optional alert email" />
+            <button class="btn" type="submit">Process Image</button>
+        </form>
+    </div>
+    <div class="card">
+        <h2>Result</h2>
+        <pre id="image-result" class="result">Waiting for image...</pre>
+        <img id="image-output" class="preview hidden" alt="Processed output" />
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/image.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-title">
+    <p class="eyebrow">Live Monitoring</p>
+    <h2>Live Camera Detection</h2>
+    <p>Connect a webcam or stream source and monitor no-helmet motorcycle violations in real time.</p>
+</section>
+
+<section class="tool-layout">
+    <div class="card">
+        <h2>Camera Source</h2>
+        <div class="row">
+            <input id="live-source" placeholder="Camera index or RTSP URL" />
+            <input id="live-email" placeholder="Optional alert email" />
+            <button id="start-live" class="btn">Start Stream</button>
+            <button id="stop-live" class="btn danger">Stop Stream</button>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Live Feed</h2>
+        <img id="live-stream" class="preview hidden" alt="Live stream" />
+        <pre id="live-state" class="result">Stream stopped.</pre>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/live.js') }}"></script>
+{% endblock %}

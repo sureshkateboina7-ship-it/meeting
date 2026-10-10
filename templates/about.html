@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-title">
+    <p class="eyebrow">System Details</p>
+    <h2>Model & Pipeline</h2>
+    <p>YOLO-based rider and plate detection with OCR, violation storage, and email alerts.</p>
+</section>
+
+<section class="card">
+    <h2>About</h2>
+    <p>
+        This system uses Ultralytics YOLOv8 for rider/helmet detection and ALPR/OCR for extracting registration text
+        from detected plate regions.
+    </p>
+    <p>
+        Implemented pipeline: Frame -> Helmet Detection -> Bike-rider validation -> No Helmet violation ->
+        Rider/Bike-guided Plate Detection -> OCR -> SQLite Save with annotated evidence -> SMTP Email Alert.
+    </p>
+    <p>
+        The project follows MVT principles in Flask:
+        <strong>Model Layer</strong> (`services`, `database`), <strong>Views</strong> (`views`), and
+        <strong>Templates</strong> (`templates`).
+    </p>
+</section>
+{% endblock %}

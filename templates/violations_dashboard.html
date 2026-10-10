@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+    <div class="hero-main">
+        <p class="eyebrow">Analytics Dashboard</p>
+        <h2>Violation Insights and Evidence History</h2>
+        <p>
+            Review saved plate detections, monitor violation trends, and inspect captured evidence from image, video,
+            and live camera workflows.
+        </p>
+    </div>
+    <div class="hero-panel">
+        <div class="hero-metrics" id="dashboard-metrics">
+            <div class="metric">
+                <h3>Total Violations</h3>
+                <p id="metric-total">0</p>
+            </div>
+            <div class="metric">
+                <h3>Readable Plates</h3>
+                <p id="metric-readable">0</p>
+            </div>
+            <div class="metric">
+                <h3>Emails Tagged</h3>
+                <p id="metric-email">0</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <div class="row">
+        <button id="refresh-violations" class="btn">Refresh</button>
+    </div>
+    <div class="table-wrap">
+        <table id="violations-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Plate</th>
+                    <th>Image</th>
+                    <th>Email</th>
+                    <th>Timestamp</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-title">
+    <p class="eyebrow">Recorded Footage</p>
+    <h2>Video Detection</h2>
+    <p>Process uploaded video and save each no-helmet motorcycle violation with plate OCR.</p>
+</section>
+
+<section class="tool-layout">
+    <div class="card">
+        <h2>Upload Video</h2>
+        <form id="video-form">
+            <input type="file" name="file" accept="video/*" required />
+            <input type="email" name="email" placeholder="Optional alert email" />
+            <button class="btn" type="submit">Process Video</button>
+        </form>
+    </div>
+    <div class="card">
+        <h2>Result</h2>
+        <pre id="video-result" class="result">Waiting for video...</pre>
+        <video id="video-output" class="preview hidden" controls></video>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/video.js') }}"></script>
+{% endblock %}

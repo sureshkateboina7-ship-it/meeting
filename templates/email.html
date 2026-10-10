@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-title">
+    <p class="eyebrow">Notification Center</p>
+    <h2>Email Evidence</h2>
+    <p>Send challan evidence to a recipient using a saved violation ID or manual case details.</p>
+</section>
+
+<section class="tool-layout">
+    <div class="card">
+        <h2>Email Details</h2>
+        <form id="email-form">
+            <input type="number" name="violation_id" placeholder="Violation ID" />
+            <input type="text" name="plate_number" placeholder="Plate number" />
+            <input type="text" name="image_path" placeholder="Evidence image path" />
+            <input type="text" name="timestamp" placeholder="Timestamp" />
+            <input type="email" name="email" placeholder="Recipient email" required />
+            <button class="btn" type="submit">Send Email</button>
+        </form>
+    </div>
+    <div class="card">
+        <h2>Status</h2>
+        <pre id="email-result" class="result">Waiting to send...</pre>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/email.js') }}"></script>
+{% endblock %}
